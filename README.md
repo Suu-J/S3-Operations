@@ -12,9 +12,9 @@ Scripts for AWS S3 bucket operations including copying, listing, and managing fi
 
 ## File Listing Scripts
 - **list_uploaded_files.py** - Lists all .opus files in S3 and saves to CSV
-- **createCSV.py** - Lists all S3 objects and saves to CSV
-- **createCSV_2.py** - Lists S3 objects filtered by 'conversation_id='
-- **createCSV_3.py** - Lists S3 objects filtered by conversation ID, excluding JSON files
+- **list_objs_csv.py** - Lists all S3 objects and saves to CSV
+- **list_objs_csv_2.py** - Lists S3 objects filtered by 'conversation_id='
+- **list_objs_csv_3.py** - Lists S3 objects filtered by conversation ID, excluding JSON files
 - **year2023_list.py** - Lists objects from year=2023 folder
 
 ## Requirements
