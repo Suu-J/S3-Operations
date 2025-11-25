@@ -1,7 +1,9 @@
-#TDW TDW
+# saving 
+# i should just put the string in variable
+
+
 import boto3
 import csv
-
 
 aws_access_key_id = ''
 aws_secret_access_key = ''
@@ -16,6 +18,7 @@ s3_client = boto3.client(
 )
 
 print("printing all objects in the S3 bucket\n")
+
 def list_s3_objects(bucket_name):
     paginator = s3_client.get_paginator('list_objects_v2')
     for page in paginator.paginate(Bucket=bucket_name):
@@ -23,6 +26,7 @@ def list_s3_objects(bucket_name):
             yield content['Key']
 
 print("making CSV file\n")
+
 def save_to_csv(object_keys, filename='s3_file_list3.csv'):
     with open(filename, 'w', newline='') as csvfile:
         filewriter = csv.writer(csvfile)
@@ -35,7 +39,6 @@ def main():
     object_keys = list_s3_objects(s3_bucket_name)
     save_to_csv(object_keys)
 
-print("Saving\n")
 
 if __name__ == "__main__":
     main()
